@@ -1,0 +1,7 @@
+Contact
+=======
+If you have any questions or comments about line-log2py,
+please feel free to contact me via
+Email: yuji@sasaki.dev
+or Twitter: https://twitter.com/yujisasaki89
+This project is hosted at https://github.com/jyu0414/line-log2py
