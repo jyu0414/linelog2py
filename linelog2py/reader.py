@@ -33,7 +33,7 @@ class Reader:
 
       splitted = line.split('\t')
 
-      if len(splitted) == 3:
+      if len(splitted) >= 3 and re.fullmatch(r'\d{2}:\d{2}', splitted[0]):
         time = datetime.strptime(f'{dateString} {splitted[0]}', '%Y/%m/%d %H:%M')
         messages.append(cls.makeMessafeFromLine(splitted, time))
       else:
@@ -43,7 +43,7 @@ class Reader:
 
   @classmethod
   def makeMessafeFromLine(cls, lineSplitted: list[str], time: str) -> Message:
-    text = lineSplitted[2].replace('"','').replace('\n', '')
+    text = "".join(lineSplitted[2:]).replace('"','').replace('\n', '')
     if text.startswith("[") and text.endswith("]"):
       return Message(time, lineSplitted[1], text, Category.fromLabel(text))
     else:
