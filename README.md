@@ -3,9 +3,13 @@
 
 linelog2py is a library to import LINE Chat History to Python.
 
-## Summary
+## Overview
 
 This is a library to help you import LINE chat history files for text analysis, etc. It supports the input of a text file which can be output from the `LINE talk room settings screen` -> `Other Settings` -> `Export Chat History`. The language setting of LINE must be set to either English or Japanese when outputting the file.
+
+## Requirement
+
+- Python3
 
 ## Installation
 
@@ -38,16 +42,19 @@ for message in messages:
 
 #### Properties
 
-`time: datetime`  Date and time the message was sent
-`username: str` User's display name
-`textlines: list[str]`  List of message sentences
-`kind: Category`  Category of the message (Text, Sticker, etc.)
+- `time: datetime`  Date and time the message was sent
+
+- `username: str` User's display name
+
+- `textlines: list[str]`  List of message sentences
+
+- `kind: Category`  Category of the message (Text, Sticker, etc.)
 
 #### Methods
 
-`def addMessage(self, text: str) -> None` Add line to the sentences list
-`def asList(self) -> list[str]`  Output contents as list
+- `def addMessage(self, text: str) -> None` Add line to the sentences list
 
+- `def asList(self) -> list[str]`  Output contents as list
 
 ### Category
 
@@ -68,17 +75,16 @@ for message in messages:
 
 #### Methods
 
-`def fromLabel(cls, label: str)`  Generate `Cateory` from label string.
+- `def fromLabel(cls, label: str)`  Generate `Cateory` from label string.
 
 ### Reader
 
 #### Methods
 
-`def readFile(file: str) -> list[Message]` Read a file from the path and return a list of `Message`.
+- `def readFile(file: str) -> list[Message]` Read a file from the path and return a list of `Message`.
 
-## Upload to PyPI
+## Copyright and License Information
 
-```
-python3 setup.py bdist_wheel
-python3 -m  twine upload --config-file ".pypirc" dist/*
-```
+Copyright (c) 2022 Yuji Sasaki. All rights reserved.
+
+This software is released under the MIT License, see LICENSE.
