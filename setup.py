@@ -41,9 +41,9 @@ CLASSIFIERS = [
     'Topic :: Text Editors :: Word Processors'
 ]
 
-with open(f'{os.environ("GITHUB_WORKSPACE")}/README.md', 'r') as fp:
+with open(f'{os.environ["GITHUB_WORKSPACE"]}/README.md', 'r') as fp:
     readme = fp.read()
-with open(f'{os.environ("GITHUB_WORKSPACE")}/CONTACT.txt', 'r') as fp:
+with open(f'{os.environ["GITHUB_WORKSPACE"]}/CONTACT.txt', 'r') as fp:
     contacts = fp.read()
 long_description = readme + '\n\n' + contacts
 
