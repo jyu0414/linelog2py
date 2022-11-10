@@ -1,5 +1,5 @@
 # linelog2py
-[![PyPI](https://img.shields.io/pypi/v/PyGithub.svg)](https://pypi.python.org/pypi/linelog2py)
+[![PyPI](https://img.shields.io/pypi/v/linelog2py)](https://pypi.python.org/pypi/linelog2py)
 ![example workflow](https://github.com/jyu0414/linelog2py/actions/workflows/python-publish.yml/badge.svg)
 
 linelog2py is a library to import LINE Chat History to Python.
