@@ -52,7 +52,7 @@ $ python example/main.py
 
 - `username: str` User's display name
 
-- `textlines: list[str]`  List of message sentences
+- `textlines: List[str]`  List of message sentences
 
 - `kind: Category`  Category of the message (Text, Sticker, etc.)
 
@@ -60,7 +60,7 @@ $ python example/main.py
 
 - `def addMessage(self, text: str) -> None` Add line to the sentences list
 
-- `def asList(self) -> list[str]`  Output contents as list
+- `def asList(self) -> List[str]`  Output contents as list
 
 ### Category
 

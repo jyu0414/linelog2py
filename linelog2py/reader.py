@@ -5,6 +5,7 @@
 from datetime import datetime
 from itertools import groupby
 import re
+from typing import List
 
 from .message import Message
 from .category import Category

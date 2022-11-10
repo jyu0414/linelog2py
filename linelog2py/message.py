@@ -23,7 +23,7 @@ class Message:
   def addMessage(self, text: str) -> None:
     self.textlines.append(text)
 
-  def asList(self) -> list[str]:
+  def asList(self) -> List[str]:
     return [self.time, self.username, self.kind, " ".join(self.textlines)]
 
   def __str__(self):
