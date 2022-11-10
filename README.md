@@ -1,4 +1,4 @@
-# line-log2py
+# linelog2py
 Import Line Talk History to Python (Supported in Japanese only)
 
 ## 概要
@@ -11,7 +11,7 @@ PyPIでインストールできます．
 
 ```
 # PyPI
-pip install line-log2py
+pip install linelog2py
 ```
 
 ## 使用方法
@@ -33,7 +33,7 @@ messages = Reader.readFile(file)
 
 #### Properties
 
-`datetime: datetime`  メッセージが送信された日時
+`time: datetime`  メッセージが送信された日時
 `username: str` ユーザの表示名
 `textlines: list[str]`  メッセージの行毎の文章
 `kind: Category`  メッセージの種類（テキスト，スタンプ，写真など）
@@ -58,6 +58,10 @@ messages = Reader.readFile(file)
 - CALL_CANCELLED
 - CALL_MISSED
 - CONTACT
+
+#### Methods
+
+`def fromLabel(cls, label: str)`  ラベルから`Cateory`を生成する 
 
 ### Reader
 

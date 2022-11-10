@@ -1,7 +1,11 @@
+# Author: Yuji Sasaki <yuji@sasaki.dev>
+# Copyright (c) 2022 Yuji Sasaki
+# License: MIT License
+
 from enum import Enum
 
 class Category(Enum):
-  UNDEFINED = Enum.UNDEFINED
+  NONE = 0
   TEXT = 1
   IMAGE = 2
   MOVIE = 3
@@ -12,16 +16,18 @@ class Category(Enum):
   CALL_MISSED = 8
   CONTACT = 9
 
-  def __init__(self, label: str):
+  @classmethod
+  def fromLabel(cls, label: str):
     if label == '[写真]':
-      self = self.IMAGE
+      return cls.IMAGE
     elif label == '[動画]':
-      self = self.MOVIE
+      return cls.MOVIE
     elif label == '[ファイル]':
-      self = self.FILE
+      return cls.FILE
     elif label == '[スタンプ]':
-      self = self.STAMP
+      return cls.STAMP
     elif label == '[連絡先]':
-      self = self.CONTACT
+      return cls.CONTACT
     else:
-      self = self.UNDEFINED
+      return cls.NONE
+    

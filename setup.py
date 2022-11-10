@@ -3,16 +3,16 @@
 # License: MIT License
 
 from setuptools import setup
-import seaborn_analyzer
+import linelog2py
 
-DESCRIPTION = "line-log2py: import LINE Talk History"
-NAME = 'line-log2py'
+DESCRIPTION = "linelog2py: import LINE Talk History"
+NAME = 'linelog2py'
 AUTHOR = 'Yuji Sasaki'
 AUTHOR_EMAIL = 'yuji@sasaki.dev'
-URL = 'https://github.com/jyu0414/line-log2py'
+URL = 'https://github.com/jyu0414/linelog2py'
 LICENSE = 'MIT License'
-DOWNLOAD_URL = 'https://github.com/jyu0414/line-log2py'
-VERSION = seaborn_analyzer.__version__
+DOWNLOAD_URL = 'https://github.com/jyu0414/linelog2py'
+VERSION = linelog2py.__version__
 PYTHON_REQUIRES = ">=3.6"
 
 INSTALL_REQUIRES = [
@@ -22,7 +22,7 @@ EXTRAS_REQUIRE = {
 }
 
 PACKAGES = [
-    'line-log2py'
+    'linelog2py'
 ]
 
 CLASSIFIERS = [

@@ -1,13 +1,17 @@
+# Author: Yuji Sasaki <yuji@sasaki.dev>
+# Copyright (c) 2022 Yuji Sasaki
+# License: MIT License
+
 from datetime import datetime
 from itertools import groupby
 import re
 
-from message import Message
-from category import Category
+from .message import Message
+from .category import Category
 
 class Reader:
 
-  def readFile(file: str):
+  def readFile(file: str) -> list[Message]:
     lines = []
     with open(file) as f:
       lines = f.readlines()[2:]
@@ -36,7 +40,7 @@ class Reader:
 
         if text.startswith("[") and text.endswith("]"):
           messages.append(
-            Message(time, splitted[1], '', Category(text))
+            Message(time, splitted[1], '', Category.fromLabel(text))
           )
         else:
           if text.startswith("☎ 通話時間"):
