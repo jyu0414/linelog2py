@@ -3,6 +3,7 @@
 # License: MIT License
 
 from datetime import datetime
+from typing import List
 
 from .category import Category
 
@@ -10,7 +11,7 @@ class Message:
 
   time: datetime
   username: str
-  textlines: list[str]
+  textlines: List[str]
   kind: Category
 
   def __init__(self, _datetime: datetime, _username: str, _text: list, _kind: Category = Category.TEXT):

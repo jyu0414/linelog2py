@@ -9,7 +9,7 @@ This is a library to help you import LINE chat history files for text analysis, 
 
 ## Requirement
 
-- Python3
+- Python 3.7.5  or later required
 
 ## Installation
 
@@ -34,6 +34,12 @@ messages = Reader.readFile(file)
 for message in messages:
   print(message)
 
+```
+
+You can run the example program as follows:
+
+```sh
+$ python example/main.py
 ```
 
 ## Documentation
