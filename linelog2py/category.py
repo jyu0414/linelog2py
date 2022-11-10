@@ -15,19 +15,23 @@ class Category(Enum):
   CALL_CANCELLED = 7
   CALL_MISSED = 8
   CONTACT = 9
+  UNSENT = 10
+  POLL = 11
 
   @classmethod
   def fromLabel(cls, label: str):
-    if label == '[写真]':
+    if label == '[写真]' or label == '[Photo]':
       return cls.IMAGE
-    elif label == '[動画]':
+    elif label == '[動画]' or label == '[Video]':
       return cls.MOVIE
-    elif label == '[ファイル]':
+    elif label == '[ファイル]' or label == '[File]':
       return cls.FILE
-    elif label == '[スタンプ]':
+    elif label == '[スタンプ]' or label == '[Sticker]':
       return cls.STAMP
-    elif label == '[連絡先]':
+    elif label == '[連絡先]' or label == '[Contact]':
       return cls.CONTACT
+    elif label == '[投票]' or label == '[Poll]':
+      return cls.POLL
     else:
       return cls.NONE
     

@@ -23,7 +23,7 @@ class Message:
     self.textlines.append(text)
 
   def asList(self) -> list[str]:
-    return [self.time, self.username, " ".join(self.textlines)]
+    return [self.time, self.username, self.kind, " ".join(self.textlines)]
 
   def __str__(self):
-    return f'{self.time}, {self.username}, "{" ".join(self.textlines)}"'
+    return ",".join(map(lambda x: str(x), self.asList()))

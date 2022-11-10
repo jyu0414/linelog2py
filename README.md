@@ -1,29 +1,34 @@
 # linelog2py
-Import Line Talk History to Python (Supported in Japanese only)
+[![PyPI](https://img.shields.io/pypi/v/PyGithub.svg)](https://pypi.python.org/pypi/linelog2py)
 
-## 概要
+linelog2py is a library to import LINE Chat History to Python.
 
-テキスト分析等の目的でチャットアプリのLINEでのトーク履歴をファイルからインポートするのを助けるライブラリです．LINEのトークルーム設定画面->その他->「トーク履歴を送信」で出力できるテキストファイルの入力に対応しています．現時点では，言語設定が日本語になっているLINEからの出力にしか対応していません．
+## Summary
 
-## インストール
+This is a library to help you import LINE chat history files for text analysis, etc. It supports the input of a text file which can be output from the `LINE talk room settings screen` -> `Other Settings` -> `Export Chat History`. The language setting of LINE must be set to either English or Japanese when outputting the file.
 
-PyPIでインストールできます．
+## Installation
+
+You can install it via PyPI.
 
 ```
 # PyPI
-pip install linelog2py
+$ pip install linelog2py
 ```
 
-## 使用方法
+## Usage
 
-`Reader`でファイルを読み込むと`Message`クラスのリストが出力されます．
+Reading a file via `Reader` will output a list of `Message`.
 
-```
-from line-log2py import Reader
+```python
+from linelog2py import *
 
 file = './line_history.txt'
 
 messages = Reader.readFile(file)
+
+for message in messages:
+  print(message)
 
 ```
 
@@ -33,22 +38,22 @@ messages = Reader.readFile(file)
 
 #### Properties
 
-`time: datetime`  メッセージが送信された日時
-`username: str` ユーザの表示名
-`textlines: list[str]`  メッセージの行毎の文章
-`kind: Category`  メッセージの種類（テキスト，スタンプ，写真など）
+`time: datetime`  Date and time the message was sent
+`username: str` User's display name
+`textlines: list[str]`  List of message sentences
+`kind: Category`  Category of the message (Text, Sticker, etc.)
 
 #### Methods
 
-`def addMessage(self, text: str) -> None` 文章に行を追加
-`def asList(self) -> list[str]`  内容をリスト形式で出力
+`def addMessage(self, text: str) -> None` Add line to the sentences list
+`def asList(self) -> list[str]`  Output contents as list
 
 
 ### Category
 
 #### Members
 
-- UNDEFINED
+- NONE
 - TEXT
 - IMAGE
 - MOVIE
@@ -58,16 +63,18 @@ messages = Reader.readFile(file)
 - CALL_CANCELLED
 - CALL_MISSED
 - CONTACT
+- UNSENT
+- POLL
 
 #### Methods
 
-`def fromLabel(cls, label: str)`  ラベルから`Cateory`を生成する 
+`def fromLabel(cls, label: str)`  Generate `Cateory` from label string.
 
 ### Reader
 
 #### Methods
 
-`def readFile(file: str) -> list[Message]` 与えられたパスのファイルを読み込んで`Message`のリストを返す
+`def readFile(file: str) -> list[Message]` Read a file from the path and return a list of `Message`.
 
 ## Upload to PyPI
 
