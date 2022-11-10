@@ -3,6 +3,7 @@
 # License: MIT License
 
 from setuptools import setup
+import os
 import linelog2py
 
 DESCRIPTION = "linelog2py: import LINE Talk History"
@@ -40,9 +41,9 @@ CLASSIFIERS = [
     'Topic :: Text Editors :: Word Processors'
 ]
 
-with open('README.md', 'r') as fp:
+with open(f'{os.environ("GITHUB_WORKSPACE")}/README.md', 'r') as fp:
     readme = fp.read()
-with open('CONTACT.txt', 'r') as fp:
+with open(f'{os.environ("GITHUB_WORKSPACE")}/CONTACT.txt', 'r') as fp:
     contacts = fp.read()
 long_description = readme + '\n\n' + contacts
 
