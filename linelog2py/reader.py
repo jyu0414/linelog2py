@@ -13,7 +13,7 @@ from .category import Category
 class Reader:
 
   @classmethod
-  def readFile(cls, file: str) -> list[Message]:
+  def readFile(cls, file: str) -> List[Message]:
     lines = []
     with open(file) as f:
       lines = f.readlines()[2:]
