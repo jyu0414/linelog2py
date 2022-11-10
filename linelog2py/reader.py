@@ -20,7 +20,7 @@ class Reader:
 
     dateString = "2020/01/01"
     isNextNewDate = False
-    messages: list[Message] = []
+    messages: List[Message] = []
 
     for line in lines:
       if line == '\n':
@@ -43,7 +43,7 @@ class Reader:
     return messages
 
   @classmethod
-  def makeMessafeFromLine(cls, lineSplitted: list[str], time: str) -> Message:
+  def makeMessafeFromLine(cls, lineSplitted: List[str], time: str) -> Message:
     text = "".join(lineSplitted[2:]).replace('"','').replace('\n', '')
     if text.startswith("[") and text.endswith("]"):
       return Message(time, lineSplitted[1], text, Category.fromLabel(text))

@@ -87,7 +87,7 @@ $ python example/main.py
 
 #### Methods
 
-- `def readFile(file: str) -> list[Message]` Read a file from the path and return a list of `Message`.
+- `def readFile(file: str) -> List[Message]` Read a file from the path and return a list of `Message`.
 
 ## Copyright and License Information
 
