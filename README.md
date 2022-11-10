@@ -69,3 +69,9 @@ messages = Reader.readFile(file)
 
 `def readFile(file: str) -> list[Message]` 与えられたパスのファイルを読み込んで`Message`のリストを返す
 
+## Upload to PyPI
+
+```
+python3 setup.py bdist_wheel
+python3 -m  twine upload --config-file ".pypirc" dist/*
+```
