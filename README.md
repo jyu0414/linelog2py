@@ -9,7 +9,7 @@ This is a library to help you import LINE chat history files for text analysis, 
 
 ## Requirement
 
-- Python 3.7.5  or later required
+- Python 3.7.15  or later required
 
 ## Installation
 
