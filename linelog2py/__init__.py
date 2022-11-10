@@ -6,4 +6,4 @@ from .category import *
 from .message import *
 from .reader import *
 
-__version__ = '0.1.0'
+__version__ = '0.1.1'
