@@ -2,11 +2,11 @@
 [![PyPI](https://img.shields.io/pypi/v/linelog2py)](https://pypi.python.org/pypi/linelog2py)
 ![example workflow](https://github.com/jyu0414/linelog2py/actions/workflows/python-publish.yml/badge.svg)
 
-linelog2py is a library to import LINE Chat History to Python.
+linelog2py is a LINE Chat History parser for Python.
 
 ## Overview
 
-This is a library to help you import LINE chat history files for text analysis, etc. It supports the input of a text file which can be output from the `LINE talk room settings screen` -> `Other Settings` -> `Export Chat History`. The language setting of LINE must be set to either English or Japanese when outputting the file.
+This is a Python library to help you import LINE chat history files for text analysis, etc. It supports the input of a text file which can be output from the `LINE talk room settings screen` -> `Other Settings` -> `Export Chat History`.The loaded messages are treated as a list of `Message` class. The language setting of LINE must be set to either English or Japanese when outputting the file.
 
 ## Requirement
 
@@ -67,18 +67,18 @@ $ python example/main.py
 
 #### Members
 
-- NONE
-- TEXT
-- IMAGE
-- MOVIE
-- STAMP
-- FILE
-- CALL
-- CALL_CANCELLED
-- CALL_MISSED
-- CONTACT
-- UNSENT
-- POLL
+- `NONE`
+- `TEXT`
+- `IMAGE`
+- `MOVIE`
+- `STAMP`
+- `FILE`
+- `CALL`
+- `CALL_CANCELLED`
+- `CALL_MISSED`
+- `CONTACT`
+- `UNSENT`
+- `POLL`
 
 #### Methods
 
